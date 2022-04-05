@@ -1,7 +1,7 @@
 import "./assets/styles/styles.scss";
 import "./index.scss";
 
-const articleContainerElement = document.querySelector(".articles-container");
+const articleContainerElement=document.querySelector(".articles-container");
 
 const createArticles = articles => {
   const articlesDOM = articles.map(article => {

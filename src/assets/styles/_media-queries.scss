@@ -13,14 +13,14 @@
 }
 
 /* Portrait tablet to landscape and desktop */
-@mixin xs {
+@mixin md {
     @media (min-width: 768px) and (max-width:979px){
         @content;
     }
 }
 
 /* Large desktop */
-@mixin xs {
+@mixin ml {
     @media (min-width: 1200px){
         @content;
     }

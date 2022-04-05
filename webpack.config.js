@@ -35,6 +35,7 @@ module.exports = {
             {
               from: './src/assets/images',
               to: 'assets/images',
+              noErrorOnMissing: true
             },
           ],
         }),

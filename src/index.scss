@@ -1,3 +1,5 @@
+@import './assets/styles/media-queries.scss';
+
 .content{
     display: flex;
     justify-content: center;
@@ -12,12 +14,16 @@
             align-items: center;
             background: white;
             padding:  0 5rem;
+            @include xs {
+                padding: 0 2rem;
+            }
             margin-bottom: 5rem;
             border-radius: 0.3rem;
             box-shadow: var(--box-shadow);
             img{
                 height: 6rem;
                 width: 6rem;
+                border-radius: 50%;
                 margin-top: -3rem;
             }
             h2{
