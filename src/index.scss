@@ -9,6 +9,16 @@
     .side-bar{
      flex: 0 0 25rem;
      padding: 0 2rem 2rem 2rem;
+     select{
+        width: 100%;
+        background: white;
+        padding: 1rem;
+        margin-bottom: 2rem;
+        border-radius: 0.3rem;
+        border: 0;
+        outline: O;
+        box-shadow: var(--box-shadow);
+     }
      .categories{
         padding:2rem;
         background: white;
