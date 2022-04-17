@@ -1,5 +1,6 @@
 import "./assets/styles/styles.scss";
 import "./index.scss";
+import { openModal } from "./assets/javascripts/modal";
 
 const articleContainerElement = document.querySelector(".articles-container");
 const categoriesContainerElement = document.querySelector(".categories");
@@ -11,7 +12,7 @@ let sortBy = 'asc';
 
 selectElement.addEventListener("change", () => {
   sortBy = selectElement.value;
-  fetchArticle();
+  fetchArticle(); //ici on invoc la fonction "fetchArticle" par rafrechir la page
 })
 
 // la Methode filter permet de litrer les article par categorie et ensuite de les affichers lorsque la 
@@ -63,21 +64,24 @@ return articleDOM;
   });
   deleteButtons.forEach(button => {
     button.addEventListener("click", async event => {
-        try {
-            const target = event.target;
-            const articleId = target.dataset.id;
-            const response = await fetch(
-              `https://restapi.fr/api/article/${articleId}`,
-              {
-                method: "DELETE"
-              }
-            );
-            const body = await response.json();
-        console.log(body);
-        fetchArticle();
-      } catch (e) {
-        console.log("e : ", e);
-      }
+        openModal('Etez vous sur de vouloir supprimer votre article');
+    //     if(result === true){
+    //       try {
+    //         const target = event.target;
+    //         const articleId = target.dataset.id;
+    //         const response = await fetch(
+    //           `https://restapi.fr/api/article/${articleId}`,
+    //           {
+    //             method: "DELETE"
+    //           }
+    //         );
+    //         const body = await response.json();
+    //     console.log(body);
+    //     fetchArticle();
+    //   } catch (e) {
+    //     console.log("e : ", e);
+    //   }
+    // }    
     });
   });
 };
@@ -131,8 +135,8 @@ const createMenuCategories = () =>{
 
 const fetchArticle = async () => {
     try {
-      const response = await fetch(`https://restapi.fr/api/article?sort=createdAt:${sortBy}`);
-      articles = await response.json();
+      const response = await fetch(`https://restapi.fr/api/article?sort=createdAt:${sortBy}`);//Nous laissons au serveur le soin d'effectuer le tri cette fois-ci.
+      articles = await response.json();                                   //à partir de la date de creation de l'article
       createArticles();
       createMenuCategories();
     } catch (e) {
