@@ -38,3 +38,28 @@
       color: var(--error);
     }
   }
+
+.calc{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background: rgba(0,0,0,0.50);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .modal{
+    background:white;
+    min-width: 30rem;
+    border-radius: 3px;
+    padding: 5rem;
+    text-align:center;
+    p{
+        margin: 1rem 0 3rem 0;
+    }
+    .btn{
+        margin-left: 0.5rem;
+    }
+    }
+}
