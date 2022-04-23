@@ -1,3 +1,4 @@
+import { openModal } from "../assets/javascripts/modal";
 import "../assets/styles/styles.scss";
 import "./form.scss";
 
@@ -38,8 +39,12 @@ initForm();
 
 // Nous remplissons tous les champs de notre formulaire en créant des références
 // et en utilisant les informations récupérées du serveur.
-btnCancel.addEventListener("click", () => {
+btnCancel.addEventListener("click", async() => {
+  const result = await openModal("Etez vous sur de vouloir supprimer l'article?")
+if(result === true){
   location.assign("/index.html");
+}
+  
 });
 
 // Lorsque nous éditons, nous ne créons pas de nouvelle ressource sur le serveur.
