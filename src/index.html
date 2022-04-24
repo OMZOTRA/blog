@@ -13,6 +13,7 @@
       crossorigin="anonymous"
     ></script>
     <title>Blog</title>
+  </head>
   <body>
     <div class="container">
       <header>
@@ -23,26 +24,25 @@
               <a href="./index.html" class="header-nav active">Accueil</a>
             </li>
             <li>
-                <a href="./form.html" class="header-nav">Créer un article</a>
+              <a href="./form.html" class="header-nav">Créer un article</a>
             </li>
-            </ul>
-            <div class="header-menu-icon">
-              <i class="fas fa-bars"></i>
-            </div>
+          </ul>
+          <div class="header-menu-icon">
+            <i class="fas fa-bars"></i>
           </div>
-        </header>
-        <div class="content">
-          <div class="side-bar">
-            <select name="" id="">
-              <option value="desc">le plus récent</option>
-              <option value="asc">le plus ancien</option>
-            </select>
-            <ul class="categories">
-            </ul>
-          </div>
-            <div class="articles-container"></div>
-          </div>
-          <footer>© blog</footer>
         </div>
-      </body>
-    </html>
+      </header>
+      <div class="content">
+        <div class="sidebar">
+          <select>
+            <option value="desc">Le plus récent</option>
+            <option value="asc">Le plus ancien</option>
+          </select>
+          <ul class="categories"></ul>
+        </div>
+        <div class="articles-container"></div>
+      </div>
+      <footer>© blog</footer>
+    </div>
+  </body>
+</html>
